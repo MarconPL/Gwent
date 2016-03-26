@@ -41,6 +41,6 @@
     <None Include="sfml-window-2.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Font Include="data\Mecha.ttf" />
+    <Font Include="data\MORPHEUS.TTF" />
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@ Game::Game()
 {
 	state = END;
 
-	if (!font.loadFromFile("data/Mecha.ttf"))
+	if (!font.loadFromFile("data/MORPHEUS.ttf"))
 	{
 		MessageBox(NULL, "Nie znaleziono czcionki!", "ERROR", NULL);
 		return;
@@ -45,11 +45,11 @@ void Game::menu()
 
 	title.setPosition(1280 / 2 - title.getGlobalBounds().width / 2, 20);
 
-	const int ile = 2;
+	const int ile = 4;
 
 	Text tekst[ile];
 
-	string str[] = { "Graj","Wyjdź" };
+	string str[] = { "Graj", "Opcje", "Autorzy", "Wyjdz" };
 	for (int i = 0;i<ile;i++)
 	{
 		tekst[i].setFont(font);
@@ -72,7 +72,7 @@ void Game::menu()
 				state = END;
 
 			//kliknięcie EXIT
-			else if (tekst[1].getGlobalBounds().contains(mouse) &&
+			else if (tekst[3].getGlobalBounds().contains(mouse) &&
 				event.type == Event::MouseButtonReleased && event.key.code == Mouse::Left)
 			{
 				state = END;
