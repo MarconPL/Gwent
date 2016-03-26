@@ -1,14 +1,14 @@
-#include "Game.h"
+﻿#include "Game.h"
 
-RenderWindow window(VideoMode(1280, 720), "Mechanized Techno Explorer", Style::Fullscreen);
+RenderWindow window(VideoMode(1280, 720), "Gwint", Style::Fullscreen);
 
-Game::Game(void)
+Game::Game()
 {
 	state = END;
 
 	if (!font.loadFromFile("data/Mecha.ttf"))
 	{
-		MessageBox(NULL, "Font not found!", "ERROR", NULL);
+		MessageBox(NULL, "Nie znaleziono czcionki!", "ERROR", NULL);
 		return;
 	}
 
@@ -16,7 +16,7 @@ Game::Game(void)
 }
 
 
-Game::~Game(void)
+Game::~Game()
 {
 }
 
@@ -31,7 +31,6 @@ void Game::runGame()
 			menu();
 			break;
 		case GameState::GAME:
-			//
 			break;
 		}
 	}
@@ -40,8 +39,9 @@ void Game::runGame()
 
 void Game::menu()
 {
-	Text title("Mechanized Techno Explorer", font, 80);
+	Text title("Gwint", font, 80);
 	title.setStyle(Text::Bold);
+	title.setColor(Color::Red);
 
 	title.setPosition(1280 / 2 - title.getGlobalBounds().width / 2, 20);
 
@@ -49,7 +49,7 @@ void Game::menu()
 
 	Text tekst[ile];
 
-	string str[] = { "Play","Exit" };
+	string str[] = { "Graj","Wyjdź" };
 	for (int i = 0;i<ile;i++)
 	{
 		tekst[i].setFont(font);
@@ -66,12 +66,12 @@ void Game::menu()
 
 		while (window.pollEvent(event))
 		{
-			//Wci�ni�cie ESC lub przycisk X
+			//Wciśnięcie ESC (ew krzyżyka gdyby był)
 			if (event.type == Event::Closed || event.type == Event::KeyPressed &&
 				event.key.code == Keyboard::Escape)
 				state = END;
 
-			//klikni�cie EXIT
+			//kliknięcie EXIT
 			else if (tekst[1].getGlobalBounds().contains(mouse) &&
 				event.type == Event::MouseButtonReleased && event.key.code == Mouse::Left)
 			{
@@ -80,7 +80,7 @@ void Game::menu()
 		}
 		for (int i = 0;i<ile;i++)
 			if (tekst[i].getGlobalBounds().contains(mouse))
-				tekst[i].setColor(Color::Cyan);
+				tekst[i].setColor(Color::Red);
 			else tekst[i].setColor(Color::White);
 
 			window.clear();
