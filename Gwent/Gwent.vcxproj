@@ -150,6 +150,9 @@
   <ItemGroup>
     <Font Include="data\MORPHEUS.TTF" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="bg.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

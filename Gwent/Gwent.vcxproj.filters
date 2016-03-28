@@ -43,4 +43,9 @@
   <ItemGroup>
     <Font Include="data\MORPHEUS.TTF" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="bg.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

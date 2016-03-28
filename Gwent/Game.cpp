@@ -44,7 +44,9 @@ void Game::menu()
 	title.setColor(Color::Red);
 
 	title.setPosition(1280 / 2 - title.getGlobalBounds().width / 2, 20);
-
+	Texture t;
+	t.loadFromFile("bg.jpg");
+	Sprite obraz(t);
 	const int ile = 5;
 
 	Text tekst[ile];
@@ -84,6 +86,8 @@ void Game::menu()
 			else tekst[i].setColor(Color::White);
 
 			window.clear();
+
+			window.draw(obraz);
 
 			window.draw(title);
 			for (int i = 0;i<ile;i++)
