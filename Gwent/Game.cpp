@@ -45,18 +45,18 @@ void Game::menu()
 
 	title.setPosition(1280 / 2 - title.getGlobalBounds().width / 2, 20);
 
-	const int ile = 4;
+	const int ile = 5;
 
 	Text tekst[ile];
 
-	string str[] = { "Graj", "Opcje", "Autorzy", "Wyjdz" };
+	string str[] = { "Graj", "Talia" , "Opcje", "Autorzy", "Wyjdz" };
 	for (int i = 0;i<ile;i++)
 	{
 		tekst[i].setFont(font);
 		tekst[i].setCharacterSize(65);
 
 		tekst[i].setString(str[i]);
-		tekst[i].setPosition(1280 / 2 - tekst[i].getGlobalBounds().width / 2, 250 + i * 120);
+		tekst[i].setPosition(1280 / 2 - tekst[i].getGlobalBounds().width / 2, 200 + i * 100);
 	}
 
 	while (state == MENU)
@@ -72,7 +72,7 @@ void Game::menu()
 				state = END;
 
 			//kliknięcie EXIT
-			else if (tekst[3].getGlobalBounds().contains(mouse) &&
+			else if (tekst[4].getGlobalBounds().contains(mouse) &&
 				event.type == Event::MouseButtonReleased && event.key.code == Mouse::Left)
 			{
 				state = END;
