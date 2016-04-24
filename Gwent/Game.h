@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <Windows.h>
 #include <string>
 
@@ -16,11 +17,16 @@ public:
 	void runGame();
 
 protected:
-	enum GameState { MENU, GAME, END };
+	enum GameState { MENU, DECK, GAME, END };
 	GameState state;
 
 private:
 	Font font;
 
+	Music music;
+
 	void menu();
+
+	void game();
+
 };
