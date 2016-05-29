@@ -12,7 +12,7 @@ Game::Game()
 		return;
 	}
 
-	if (!music.openFromFile("GwentSound.ogg"))
+	if (!music.openFromFile("data/GwentSound.ogg"))
 	{
 		MessageBox(NULL, "Nie znaleziono utworu!", "ERROR", NULL);
 		return;
@@ -52,7 +52,7 @@ void Game::menu()
 
 	title.setPosition(1280 / 2 - title.getGlobalBounds().width / 2, 20);
 	Texture t;
-	t.loadFromFile("bg1.png");
+	t.loadFromFile("data/bg.png");
 	Sprite obraz(t);
 	const int ile = 5;
 
@@ -112,7 +112,7 @@ void Game::menu()
 void Game::game()
 {
 	Texture board;
-	board.loadFromFile("gameBoard.jpg");
+	board.loadFromFile("data/gameBoard.jpg");
 	Sprite obraz(board);
 	music.play();
 	while (state == GAME)

@@ -39,22 +39,21 @@
     <None Include="sfml-system-2.dll" />
     <None Include="sfml-system-d-2.dll" />
     <None Include="sfml-window-2.dll" />
-    <None Include="GwentSound.ogg">
+    <None Include="data\GwentSound.ogg">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Font Include="data\MORPHEUS.TTF" />
+    <Image Include="data\bg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data\gameBoard.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="bg.jpg">
+    <Font Include="data\MORPHEUS.TTF">
       <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="bg1.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="gameBoard.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
+    </Font>
   </ItemGroup>
 </Project>
